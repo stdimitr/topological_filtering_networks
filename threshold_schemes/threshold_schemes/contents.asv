@@ -1,0 +1,30 @@
+
+%threhold schemes for graphs (especially for functional connectivity
+%graphs
+%Code written in Matlab by :Dimitriadis Stavros
+%see http://users.auth.gr/~stdimitr/index.html
+
+%Functions list
+1)threshold_abs()                  
+2)threshold_pro() 
+3)threshold_mean_degree()
+4)threshold_global_cost_efficiency()
+5)threshold_shortest_paths() 
+%published in Dimitriadis et al. Tracking brain dynamics via time-dependent
+%network analysis, Neuroscience Methods, 2010
+
+6)k_core_decomposition()
+7)mst_density()
+8)dijkstra()
+9)
+
+%Code written in Matlab by :Nikolaos Laskaris
+%see http://users.auth.gr/~laskaris/index.html
+9)dmatrix()
+10)minimal_spanning_tree()
+
+%Other functions from BCT toolbox
+1)degrees_und()
+2)degrees_dir()
+3)efficiency()
+
