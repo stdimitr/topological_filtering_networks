@@ -1,4 +1,4 @@
-function [nCIJtree CIJtree mdeg  globalcosteffmax costmax E]=threshold_omst_gce_wu(CIJ,flag)
+function [nCIJtree CIJtree mdeg  globalcosteffmax costmax E links]=threshold_omst_gce_wu(CIJ,flag)
 
 % threshold_omst_gce_w    Optimizing the formula GE-C via orthogonal MSTs.
 % 
@@ -73,17 +73,21 @@ for no=1:no_msts
     
    [w_st, links, X_st]= kruskal(adj,sparse(1./CIJnotintree));
     
- 
+   for kk=1:length(links)
+       links(kk,:)=sortrows(links(kk,:));
+   end
+   
+ sum(X_st)
     mst=zeros(nodes,nodes);
     for k=1:size(links,1)
         count=count+1;
         CIJtree(links(k,1),links(k,2))=CIJ(links(k,1),links(k,2));
-        %CIJtree(links(k,2),links(k,1))=CIJ(links(k,1),links(k,2));
+        CIJtree(links(k,2),links(k,1))=CIJ(links(k,1),links(k,2));
 
         mst_con(count,1)=links(k,1);
         mst_con(count,2)=links(k,2);
         mst(links(k,1),links(k,2))=CIJ(links(k,1),links(k,2));
-      %  mst(links(k,2),links(k,1))=CIJ(links(k,1),links(k,2));
+       mst(links(k,2),links(k,1))=CIJ(links(k,1),links(k,2));
     end
     
     % now add connections back, with the total number of added connections 
@@ -121,9 +125,8 @@ end
 mdeg=degree(ind);
 CIJTree=zeros(nodes,nodes);
 
-for k=1:ind
-    CIJtree=squeeze(nCIJtree(k,:,:));
-end
+CIJtree=squeeze(nCIJtree(ind,:,:));
+
 
 costmax=cost(ind);
 [gl_node E ]=global_efficiency_wu(1./CIJtree);
@@ -141,5 +144,3 @@ text(costmax,globalcosteffmax,'\leftarrow max Global Cost Efficiency',...
      'HorizontalAlignment','left')
   
 end
-
-
