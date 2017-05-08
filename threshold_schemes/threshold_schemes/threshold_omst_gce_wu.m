@@ -1,4 +1,4 @@
-function [nCIJtree CIJtree mdeg  globalcosteffmax costmax E links]=threshold_omst_gce_wu(CIJ,flag)
+function [nCIJtree CIJtree mdeg  globalcosteffmax costmax E]=threshold_omst_gce_wu(CIJ,flag)
 
 % threshold_omst_gce_w    Optimizing the formula GE-C via orthogonal MSTs.
 % 
@@ -77,7 +77,6 @@ for no=1:no_msts
        links(kk,:)=sortrows(links(kk,:));
    end
    
- sum(X_st)
     mst=zeros(nodes,nodes);
     for k=1:size(links,1)
         count=count+1;
