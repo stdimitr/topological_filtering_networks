@@ -32,7 +32,7 @@ en=round(length(b)*p);
 w_thr(1:d1,1:d1)=0;
 
 thr=a(en);                                %threshold
-w(w<thr)=0 ;                        %apply threshold
+w(w>thr)=0 ;                        %apply threshold
 
 binary(1:d1,1:d1)=0;
 binary(w>thr)=1;   
