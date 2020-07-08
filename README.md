@@ -1,5 +1,8 @@
 # Topological Filtering Networks
 
+# TODO:
+- refactor the folder structure to have stuff belonging to brain connectivity toolbox in their own folders
+
 This is the codebase taken from the paper ["Topological Filtering of Dynamic Functional Brain Networks Unfolds Informative Chronnectomics: A Novel Data-Driven Thresholding Scheme Based on Orthogonal Minimal Spanning Trees (OMSTs)"](https://www.frontiersin.org/articles/10.3389/fninf.2017.00028/full), originally located [here](https://github.com/stdimitr/topological_filtering_networks)
 
 The codebase was cleaned up and restructure by Yacine Mahdid.
@@ -15,6 +18,8 @@ If we use this codebase we need to credit the following paper:
 - [Code Structure](#code-structure)
 - [Pseudo Code](#pseudo-code)
 - [References](#references)
+- [Troubleshooting](#troubleshooting)
+
 
 ## Requirements
 - [Bioinformatics Toolbox](https://www.mathworks.com/products/bioinfo.html?s_tid=AO_PR_info) 
@@ -29,11 +34,17 @@ To learn how to use the algorithms the authors have created the following demo f
 The files contains MEX functions that are binding between C function created by [David Gleich](https://www.cs.purdue.edu/homes/dgleich/) in 2006. These functions are used to find the shortest path in a graph.
 
 
-- lib: contains the MEX binding to C 
+- lib: contains external library used
+    - david_gleich: contains the MEX functions to calculate shortest path
+    - brain_connectivity_toolbox: contains function from [bct](https://sites.google.com/site/bctnet/)
+- threshold: collection of thresholding methods
 
 ### Notes:
 The `memo.m` file might not be important will need to check it out (it comes from 2010 before the repo was uploaded) 
 
+If you want to use this library we need to give it a N*N graph
+Watchout you will need to swap the gce calculation depending if 
+you are using a weighted or binary / directed or undirected graph. Looking at `memo_run_threshold_schemes.m` is super useful.
 
 
 
@@ -48,3 +59,6 @@ Brain Connect. 2017 Dec;7(10):661-670. doi: 10.1089/brain.2017.0512.
 
 
 2. Dimitriadis, S. I., Salis, C., Tarnanas, I., and Linden, D. E. (2017). Topological filtering of dynamic functional brain networks unfolds informative chronnectomics: a novel data-driven thresholding scheme based on Orthogonal Minimal Spanning Trees (OMSTs). Front. Neuroinform. 11:28. doi: 10.3389/fninf.2017.00028
+
+## Troubleshooting
+- [Can't install a toolbox on Linux](https://www.mathworks.com/matlabcentral/answers/334889-can-t-install-any-toolboxes-because-can-t-write-to-usr-local-matlab-r2017)
