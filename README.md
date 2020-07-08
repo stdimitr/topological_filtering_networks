@@ -10,10 +10,14 @@ If we use this codebase we need to credit the following paper:
 
 
 ## Table of Content
+- [Requirements](#requirements)
 - [Abstract](#abstract)
 - [Code Structure](#code-structure)
 - [Pseudo Code](#pseudo-code)
 - [References](#references)
+
+## Requirements
+- [Bioinformatics Toolbox](https://www.mathworks.com/products/bioinfo.html?s_tid=AO_PR_info) 
 
 ## Abstract
 The human brain is a large-scale system of functionally connected brain regions. This system can be modeled as a network, or graph, by dividing the brain into a set of regions, or “nodes,” and quantifying the strength of the connections between nodes, or “edges,” as the temporal correlation in their patterns of activity. Network analysis, a part of graph theory, provides a set of summary statistics that can be used to describe complex brain networks in a meaningful way. The large-scale organization of the brain has features of complex networks that can be quantified using network measures from graph theory. The adaptation of both bivariate (mutual information) and multivariate (Granger causality) connectivity estimators to quantify the synchronization between multichannel recordings yields a fully connected, weighted, (a)symmetric functional connectivity graph (FCG), representing the associations among all brain areas. The aforementioned procedure leads to an extremely dense network of tens up to a few hundreds of weights. Therefore, this FCG must be filtered out so that the “true” connectivity pattern can emerge. Here, we compared a large number of well-known topological thresholding techniques with the novel proposed data-driven scheme based on orthogonal minimal spanning trees (OMSTs). OMSTs filter brain connectivity networks based on the optimization between the global efficiency of the network and the cost preserving its wiring. We demonstrated the proposed method in a large EEG database (N = 101 subjects) with eyes-open (EO) and eyes-closed (EC) tasks by adopting a time-varying approach with the main goal to extract features that can totally distinguish each subject from the rest of the set. Additionally, the reliability of the proposed scheme was estimated in a second case study of fMRI resting-state activity with multiple scans. Our results demonstrated clearly that the proposed thresholding scheme outperformed a large list of thresholding schemes based on the recognition accuracy of each subject compared to the rest of the cohort (EEG). Additionally, the reliability of the network metrics based on the fMRI static networks was improved based on the proposed topological filtering scheme. Overall, the proposed algorithm could be used across neuroimaging and multimodal studies as a common computationally efficient standardized tool for a great number of neuroscientists and physicists working on numerous of projects.
@@ -25,7 +29,10 @@ To learn how to use the algorithms the authors have created the following demo f
 The files contains MEX functions that are binding between C function created by [David Gleich](https://www.cs.purdue.edu/homes/dgleich/) in 2006. These functions are used to find the shortest path in a graph.
 
 
-- lib: contains the MEX binding to C files
+- lib: contains the MEX binding to C 
+
+### Notes:
+The `memo.m` file might not be important will need to check it out (it comes from 2010 before the repo was uploaded) 
 
 
 
