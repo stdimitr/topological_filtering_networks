@@ -14,7 +14,7 @@ w=rand(nodes,nodes);
 
 for k=1:nodes
     for l=(k+1):nodes
-        w(l,k)=x(k,l);
+        w(l,k)=w(k,l);
     end
 end
     
@@ -68,6 +68,7 @@ k2=10;
 % with the same total number of edges and identical node positions as
 % in the original neural networks.
 density=0.35;
+
 %spatial refers to the spatial coordinated of the nodes e.g.Macaque, Cat,
 %Brain cortical regions
 lbmrn= mst_density(spatial,density);
