@@ -40,7 +40,7 @@ The files contains MEX functions that are binding between C function created by 
 
 - example: folder containing the examples file, the one that is important is the `memo_run_threshold_schemes.m`
 - lib: contains external library used
-    - david_gleich: contains the MEX functions to calculate shortest path
+    - matlab-bgl: contains the MEX functions to calculate shortest path
     - brain_connectivity_toolbox: contains function from [bct](https://sites.google.com/site/bctnet/)
 - src: this contain the actual codebase that is used for the OMST thresholding comparison.
     - threshold: collection of thresholding methods that can be used within this codebase. There are weighted-directed (wd), weighted-undirected (wu), binary-directed (bd) and binary-undirected (bu) for global_cost_efficiency available.
