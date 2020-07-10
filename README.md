@@ -1,22 +1,27 @@
 # Topological Filtering Networks
 
-# TODO:
-- refactor the folder structure to have stuff belonging to brain connectivity toolbox in their own folders
-
 This is the codebase taken from the paper ["Topological Filtering of Dynamic Functional Brain Networks Unfolds Informative Chronnectomics: A Novel Data-Driven Thresholding Scheme Based on Orthogonal Minimal Spanning Trees (OMSTs)"](https://www.frontiersin.org/articles/10.3389/fninf.2017.00028/full), originally located [here](https://github.com/stdimitr/topological_filtering_networks)
 
 The codebase was cleaned up and restructure by Yacine Mahdid.
 
-If we use this codebase we need to credit the following paper:
+If you want to use this codebase for the OMST you need to credit the following paper:
 
 **Dimitriadis, S. I., Salis, C., Tarnanas, I., and Linden, D. E. (2017). Topological filtering of dynamic functional brain networks unfolds informative chronnectomics: a novel data-driven thresholding scheme based on Orthogonal Minimal Spanning Trees (OMSTs). Front. Neuroinform. 11:28. doi: 10.3389/fninf.2017.00028**
 
+But if we use the component of the codebase you need to credit the right researchers depending on the code used:
+
+**Please cited this Toolbox as: Dimitriadis SI, Laskaris NA, Tsirka V, Vourkas V, Micheloyannis S, Fotopoulos S. Tracking brain dynamics via time-dependent network analysis. Journal of Neuroscience Methods Volume 193, Issue 1, 30 October 2010,Pages 145-155**
+
+or the Brain Connectivity Toolbox for everything inside the folder `/lib/brain_connectivity_toolbox/` :
+
+**Complex network measures of brain connectivity: Uses and interpretations.Rubinov M, Sporns O (2010) NeuroImage 52:1059-69.**
+
+or [Dr. David Gleich](https://github.com/dgleich/matlab-bgl) for his work on MATLAB-BGL see the toolbox for more information
 
 ## Table of Content
 - [Requirements](#requirements)
 - [Abstract](#abstract)
 - [Code Structure](#code-structure)
-- [Pseudo Code](#pseudo-code)
 - [References](#references)
 - [Troubleshooting](#troubleshooting)
 
@@ -33,24 +38,18 @@ To learn how to use the algorithms the authors have created the following demo f
 
 The files contains MEX functions that are binding between C function created by [David Gleich](https://www.cs.purdue.edu/homes/dgleich/) in 2006. These functions are used to find the shortest path in a graph.
 
-
+- example: folder containing the examples file, the one that is important is the `memo_run_threshold_schemes.m`
 - lib: contains external library used
     - david_gleich: contains the MEX functions to calculate shortest path
     - brain_connectivity_toolbox: contains function from [bct](https://sites.google.com/site/bctnet/)
-- threshold: collection of thresholding methods
+- threshold: collection of thresholding methods that can be used within this codebase. There are weighted-directed (wd), weighted-undirected (wu), binary-directed (bd) and binary-undirected (bu) for global_cost_efficiency available.
 
 ### Notes:
-The `memo.m` file might not be important will need to check it out (it comes from 2010 before the repo was uploaded) 
+The `memo.m` is missing the `spatial` variable in order to be useable.
 
 If you want to use this library we need to give it a N*N graph
 Watchout you will need to swap the gce calculation depending if 
 you are using a weighted or binary / directed or undirected graph. Looking at `memo_run_threshold_schemes.m` is super useful.
-
-
-
-
-## Pseudo Code
-
 
 ## References:
 
