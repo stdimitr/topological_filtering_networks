@@ -48,7 +48,7 @@ The files contains MEX functions that are binding between C function created by 
 ### Notes:
 The `memo.m` is missing the `spatial` variable in order to be useable.
 
-If you want to use this library we need to give it a N*N graph
+If you want to use this library we need to give it a N*N graph.
 Watchout you will need to swap the gce calculation depending if 
 you are using a weighted or binary / directed or undirected graph. Looking at `memo_run_threshold_schemes.m` is super useful.
 
