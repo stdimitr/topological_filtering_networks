@@ -22,6 +22,7 @@ function [nCIJtree CIJtree mdeg  globalcosteffmax costmax E]=threshold_omst_gce_
 %   Output: nCIJtree  : is a 3D matrix where the 1st dimension refers to
 %   the orthogonal MSTs and the rest to the aggregated MSTs till the
 %   selection of all the edges
+%          nCIJtree   : keep every orthogonal MST 
 %           CIJtree   :  thresholded connectivity matrix based on orthogonal MSTs
 %           mdeg      : is the mean degree of the thresholded graph 
 %globalcosteffmax     : is the formula of GE-Cost at each iteration of the algorithm which means at each OMST
